@@ -1,7 +1,7 @@
 <template>
 <div id="app">
-    <HeaderBool/>
-    <MainBool/>
+    <HeaderBool @movie-received="arrMovies = $event"/>
+    <MainBool :arr-movie-name="arrMovies"/>
 </div>
 </template>
 
@@ -14,6 +14,11 @@ export default {
   components: {
     HeaderBool,
     MainBool,
+  },
+  data() {
+    return {
+      arrMovies: null,
+    };
   },
 };
 </script>

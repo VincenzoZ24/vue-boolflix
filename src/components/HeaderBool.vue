@@ -3,7 +3,7 @@
     <h1>BOOLFLIX</h1>
     <div class="right_nav">
         <label for="get">
-        <input type="text">
+        <input type="text" v-model="cerca">
     </label>
     <button @click="generaCards">CERCA</button>
     </div>
@@ -27,8 +27,10 @@ export default {
       axios.get(`https://api.themoviedb.org/3/search/movie?api_key=eddeb9cc139fc5540af4fe0bcd294c59&language=it-IT&query=${this.cerca}`)
         .then((axiosResponse) => {
           this.arrMovies = axiosResponse.data.results;
+          this.$emit('movie-received', this.arrMovies);
         });
     },
+
   },
 };
 </script>
