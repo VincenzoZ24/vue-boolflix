@@ -5,15 +5,31 @@
         <label for="get">
         <input type="text">
     </label>
-    <button>CERCA</button>
+    <button @click="generaCards">CERCA</button>
     </div>
 
   </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'HeaderBool',
+  data() {
+    return {
+      cerca: '',
+      arrMovies: [],
+    };
+  },
+  methods: {
+    generaCards() {
+      axios.get(`https://api.themoviedb.org/3/search/movie?api_key=eddeb9cc139fc5540af4fe0bcd294c59&language=it-IT&query=${this.cerca}`)
+        .then((axiosResponse) => {
+          this.arrMovies = axiosResponse.data.results;
+        });
+    },
+  },
 };
 </script>
 
