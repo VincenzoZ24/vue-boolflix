@@ -29,6 +29,7 @@ import CardSerie from '@/components/CardSerie.vue';
 
 export default {
   name: 'MainBool',
+
   props: {
     arrMovieName: Array,
     arrSerieName: Array,
