@@ -29,6 +29,7 @@ export default {
         .then((axiosResponse) => {
           this.arrMovies = axiosResponse.data.results;
           this.$emit('movie-received', this.arrMovies);
+          this.cerca = '';
         });
       axios.get(`https://api.themoviedb.org/3/search/tv?api_key=eddeb9cc139fc5540af4fe0bcd294c59&language=it-IT&query=${this.cerca}`)
         .then((axiosResponse1) => {

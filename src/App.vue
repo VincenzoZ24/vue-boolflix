@@ -2,7 +2,8 @@
 <div id="app">
     <HeaderBool @movie-received="arrMovies = $event"
     @serie-received="arrSerie = $event" />
-    <MainBool :arr-movie-name="arrMovies" :arr-seie-name="arrSerie"/>
+    <MainBool :arr-movie-name="arrMovies"
+    :arr-serie-name="arrSerie"/>
 </div>
 </template>
 
