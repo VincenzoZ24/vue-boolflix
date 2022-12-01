@@ -17,7 +17,7 @@ export default {
   },
   data() {
     return {
-      arrMovies: null,
+      arrMovies: [],
     };
   },
 };
@@ -29,4 +29,5 @@ export default {
     padding: 0;
     box-sizing: border-box;
 }
+
 </style>

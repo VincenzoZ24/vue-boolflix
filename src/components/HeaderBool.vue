@@ -5,7 +5,7 @@
         <label for="get">
         <input type="text" v-model="cerca">
     </label>
-    <button @click="generaCards">CERCA</button>
+    <button  @click="generaCards">CERCA</button>
     </div>
 
   </div>
