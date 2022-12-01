@@ -26,8 +26,11 @@ export default {
 };
 </script>
   <style lang="scss" scoped>
-  .card_img{
+ .card_img{
     width: 100%;
+    transform: rotate(0deg);
+    backface-visibility: hidden;
+    transition: transform 0.4s linear;
     img{
         width: 100%;
     }
@@ -35,24 +38,28 @@ export default {
 .cards{
     width: calc((1000px - 3rem )/ 4);
     position: relative;
+    perspective: 1000px;
 }
 .back{
     padding: 1rem;
     color: white;
     position: absolute;
     top: 0;
-    opacity: 0;
+
     width: 100%;
     height: 100%;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transition: transform 0.4s linear;
     p{
         margin-bottom: .5rem;
     }
 }
 .cards:hover .card_img{
-    display: none;
+    transform: rotateY(-180deg);
 }
 .cards:hover .back{
-    opacity: 1;
+    transform: rotateY(0deg);
     transition: 2s;
     background-color: black;
 }
