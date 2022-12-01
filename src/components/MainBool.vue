@@ -10,20 +10,32 @@
         :key="card.poster_path"
         :card="card"
       />
+
     </div>
+    <h1>SERIE</h1>
+    <div class="container">
+        <CardSerie class=" content"
+        v-for="card in arrSerieName"
+        :key="card.poster_path"
+        :card="card"/>
+    </div>
+
   </main>
 </template>
 
 <script>
 import CardFilm from '@/components/CardFilm.vue';
+import CardSerie from '@/components/CardSerie.vue';
 
 export default {
   name: 'MainBool',
   props: {
     arrMovieName: Array,
+    arrSerieName: Array,
   },
   components: {
     CardFilm,
+    CardSerie,
   },
 };
 </script>

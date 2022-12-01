@@ -1,7 +1,8 @@
 <template>
 <div id="app">
-    <HeaderBool @movie-received="arrMovies = $event"/>
-    <MainBool :arr-movie-name="arrMovies"/>
+    <HeaderBool @movie-received="arrMovies = $event"
+    @serie-received="arrSerie = $event" />
+    <MainBool :arr-movie-name="arrMovies" :arr-seie-name="arrSerie"/>
 </div>
 </template>
 
@@ -18,6 +19,7 @@ export default {
   data() {
     return {
       arrMovies: [],
+      arrSerie: [],
     };
   },
 };

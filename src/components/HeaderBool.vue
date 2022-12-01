@@ -20,6 +20,7 @@ export default {
     return {
       cerca: '',
       arrMovies: [],
+      arrSerie: [],
     };
   },
   methods: {
@@ -28,6 +29,11 @@ export default {
         .then((axiosResponse) => {
           this.arrMovies = axiosResponse.data.results;
           this.$emit('movie-received', this.arrMovies);
+        });
+      axios.get(`https://api.themoviedb.org/3/search/tv?api_key=eddeb9cc139fc5540af4fe0bcd294c59&language=it-IT&query=${this.cerca}`)
+        .then((axiosResponse1) => {
+          this.arrSerie = axiosResponse1.data.results;
+          this.$emit('serie-received', this.arrSerie);
         });
     },
 
